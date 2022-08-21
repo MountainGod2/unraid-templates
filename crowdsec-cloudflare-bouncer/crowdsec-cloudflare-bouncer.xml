@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>crowdsec-cloudflare-bouncer</Name>
+  <Repository>crowdsecurity/cloudflare-bouncer:latest</Repository>
+  <Registry>https://registry.hub.docker.com/r/crowdsecurity/cloudflare-bouncer</Registry>
+  <Network>halnet</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project>https://github.com/crowdsecurity/cs-cloudflare-bouncer</Project>
+  <Overview>A bouncer that syncs the decisions made by CrowdSec with CloudFlare's firewall. Manages multi user, multi account, multi zone setup. Supports IP, Country and AS scoped decisions.</Overview>
+  <Category>Security:</Category>
+  <WebUI>http://[IP]:[PORT:]</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/crowdsecurity/cs-cloudflare-bouncer/main/docs/assets/crowdsec_cloudfare.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1661051706</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires>Create API token and set permisions&#xD;
+&#xD;
+https://dash.cloudflare.com/profile/api-tokens&#xD;
+https://raw.githubusercontent.com/crowdsecurity/cs-cloudflare-bouncer/main/docs/assets/token_permissions.png&#xD;
+&#xD;
+Obtain `crowdsec_lapi_key` from crowdsec terminal&#xD;
+`cscli -oraw bouncers add cloudflarebouncer`&#xD;
+&#xD;
+Create `/crowdsec/bouncers` directory if it doesn't exist&#xD;
+`sudo mkdir /mnt/user/appdata/crowdsec/bouncers`&#xD;
+&#xD;
+Create CF bouncer config using token(s), ex. `&amp;lt;CLOUDFLARE_API_TOKEN1&amp;gt;,&amp;lt;CLOUDFLARE_API_TOKEN2&amp;gt;`&#xD;
+`docker run --rm crowdsecurity/cloudflare-bouncer -g CLOUDFLARE_API_TOKEN &amp;gt; /mnt/user/appdata/crowdsec/bouncers/crowdsec-cloudflare-bouncer.yaml`&#xD;
+&#xD;
+Review config and set `crowdsec_lapi_key`. `crowdsec_lapi_url` must be reachable by the container&#xD;
+`sudo nano /mnt/user/appdata/crowdsec/bouncers/crowdsec-cloudflare-bouncer.yaml`</Requires>
+  <Config Name="Appdata" Target="/etc/crowdsec/bouncers" Default="/mnt/user/appdata/crowdsec/bouncers/" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false"/>
+  <Config Name="Port" Target="2112" Default="" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">2112</Config>
+  <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">99</Config>
+  <Config Name="UMASK" Target="022" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">022</Config>
+  <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">100</Config>
+</Container>
