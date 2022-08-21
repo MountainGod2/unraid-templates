@@ -17,7 +17,7 @@
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1661051706</DateInstalled>
+  <DateInstalled>1661052225</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Requires>Create API token and set permisions&#xD;
@@ -34,8 +34,10 @@ Create `/crowdsec/bouncers` directory if it doesn't exist&#xD;
 Create CF bouncer config using token(s), ex. `&amp;lt;CLOUDFLARE_API_TOKEN1&amp;gt;,&amp;lt;CLOUDFLARE_API_TOKEN2&amp;gt;`&#xD;
 `docker run --rm crowdsecurity/cloudflare-bouncer -g CLOUDFLARE_API_TOKEN &amp;gt; /mnt/user/appdata/crowdsec/bouncers/crowdsec-cloudflare-bouncer.yaml`&#xD;
 &#xD;
-Review config and set `crowdsec_lapi_key`. `crowdsec_lapi_url` must be reachable by the container&#xD;
-`sudo nano /mnt/user/appdata/crowdsec/bouncers/crowdsec-cloudflare-bouncer.yaml`</Requires>
+Review config and set `crowdsec_lapi_key` , `crowdsec_lapi_url` must be reachable by the container&#xD;
+`sudo nano /mnt/user/appdata/crowdsec/bouncers/crowdsec-cloudflare-bouncer.yaml`&#xD;
+&#xD;
+Start the container</Requires>
   <Config Name="Appdata" Target="/etc/crowdsec/bouncers" Default="/mnt/user/appdata/crowdsec/bouncers/" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false"/>
   <Config Name="Port" Target="2112" Default="" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">2112</Config>
   <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">99</Config>
