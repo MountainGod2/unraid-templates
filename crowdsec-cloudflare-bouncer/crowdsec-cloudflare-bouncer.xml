@@ -3,7 +3,7 @@
   <Name>crowdsec-cloudflare-bouncer</Name>
   <Repository>crowdsecurity/cloudflare-bouncer:latest</Repository>
   <Registry>https://registry.hub.docker.com/r/crowdsecurity/cloudflare-bouncer</Registry>
-  <Network>halnet</Network>
+  <Network>bridge</Network>
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
@@ -17,7 +17,7 @@
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1661052225</DateInstalled>
+  <DateInstalled>1661058976</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Requires>Create API token and set permisions&#xD;
