@@ -7,7 +7,7 @@
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
-  <Support>https://discord.com/invite/wGN7ShmEE8</Support>
+  <Support>https://registry.hub.docker.com/r/crowdsecurity/cloudflare-bouncer</Support>
   <Project>https://github.com/crowdsecurity/cs-cloudflare-bouncer</Project>
   <Overview>A bouncer that syncs the decisions made by CrowdSec with CloudFlare's firewall. Manages multi user, multi account, multi zone setup. Supports IP, Country and AS scoped decisions.</Overview>
   <Category>Security:</Category>
