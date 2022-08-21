@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Maintainer>
+  <Icon>https://raw.githubusercontent.com/MountainGod2/unraid-templates/main/MG_Logo.png</Icon>
+  <Profile>
+    Unraid enthusiast and IBRACORP team member. Join our Discord!
+  </Profile>
+  <DonateLink>https://paypal.me/ibracorp</DonateLink>
+  <DonateText>If you like our work please consider Donating.</DonateText>
+  <WebPage>https://ibracorp.io</WebPage>
+  <Discord>https://discord.gg/VWAG7rZ</Discord>
+</Maintainer>
