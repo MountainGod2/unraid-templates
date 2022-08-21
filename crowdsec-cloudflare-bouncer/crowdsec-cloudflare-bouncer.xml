@@ -11,7 +11,7 @@
   <Project>https://github.com/crowdsecurity/cs-cloudflare-bouncer</Project>
   <Overview>A bouncer that syncs the decisions made by CrowdSec with CloudFlare's firewall. Manages multi user, multi account, multi zone setup. Supports IP, Country and AS scoped decisions.</Overview>
   <Category>Security:</Category>
-  <WebUI>http://[IP]:[PORT:]</WebUI>
+  <WebUI>http://[IP]:[PORT:2112]/metrics</WebUI>
   <TemplateURL/>
   <Icon>https://raw.githubusercontent.com/crowdsecurity/cs-cloudflare-bouncer/main/docs/assets/crowdsec_cloudfare.png</Icon>
   <ExtraParams/>
