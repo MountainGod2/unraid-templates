@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>crowdsec-dashboard</Name>
+  <Repository>metabase/metabase:latest</Repository>
+  <Registry>https://hub.docker.com/r/metabase/metabase</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://discord.gg/wGN7ShmEE8</Support>
+  <Project>https://crowdsec.net/</Project>
+  <Overview>Crowdsec metabase dashboard</Overview>
+  <Category>Security:</Category>
+  <WebUI>http://[IP]:[PORT:3000]/</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/ibracorp/app-logos/main/crowdsec/crowdsec.png</Icon>
+  <ExtraParams>--restart unless-stopped</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1662218225</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires>Create dashboard directory and download/extract Crowdsec dashboard template:&#xD;
+`mkdir /mnt/user/appdata/crowdsec/dashboard/ &amp;amp;&amp;amp; wget https://crowdsec-statics-assets.s3-eu-west-1.amazonaws.com/metabase_sqlite.zip &amp;amp;&amp;amp; unzip metabase_sqlite.zip -d /mnt/user/appdata/crowdsec/dashboard/`&#xD;
+&#xD;
+Add the following to your Crowdsec container as enviroment variables to give the dashboard appropriate permisions to read data:&#xD;
+`UID: 99:99`&#xD;
+`GID: 98:98`</Requires>
+  <Config Name="Host Port 1" Target="3000" Default="" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">3000</Config>
+  <Config Name="DB Location" Target="MB_DB_FILE" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">/data/metabase.db</Config>
+  <Config Name="Host Key 1" Target="depends_on" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">crowdsec</Config>
+  <Config Name="Host Path 1" Target="/metabase-data/" Default="/mnt/user/appdata/crowdsec/data/" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false"/>
+  <Config Name="Host Path 2" Target="/data/" Default="/mnt/user/appdata/crowdsec/dashboard/" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false"/>
+  <Config Name="MUID" Target="MUID" Default="99" Mode="" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">99</Config>
+  <Config Name="MGID" Target="MGID" Default="98" Mode="" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">98</Config>
+</Container>
