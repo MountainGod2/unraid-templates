@@ -13,7 +13,7 @@
   <Category>Security:</Category>
   <WebUI>http://[IP]:[PORT:2112]/metrics</WebUI>
   <TemplateURL/>
-  <Icon>https://raw.githubusercontent.com/crowdsecurity/cs-cloudflare-bouncer/main/docs/assets/crowdsec_cloudfare.png</Icon>
+  <Icon>https://raw.githubusercontent.com/ibracorp/app-logos/main/crowdsec/crowdsec.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
