@@ -25,7 +25,11 @@
 &#xD;
 Add the following to your Crowdsec container as enviroment variables to give the dashboard appropriate permisions to read data:&#xD;
 `UID: 99:99`&#xD;
-`GID: 98:98`</Requires>
+`GID: 98:98`&#xD;
+&#xD;
+Default login:&#xD;
+Username: `crowdsec@crowdsec.net`&#xD;
+Password: `!!Cr0wdS3c_M3t4b4s3??`</Requires>
   <Config Name="Host Port 1" Target="3000" Default="" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">3000</Config>
   <Config Name="DB Location" Target="MB_DB_FILE" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">/data/metabase.db</Config>
   <Config Name="Host Key 1" Target="depends_on" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">crowdsec</Config>
