@@ -9,7 +9,7 @@
   <Privileged>false</Privileged>
   <Support>https://discord.gg/wGN7ShmEE8</Support>
   <Project>https://crowdsec.net/</Project>
-  <Overview>Crowdsec metabase dashboard</Overview>
+  <Overview>Metabase dashboard for displaying Crowdsec statistics.</Overview>
   <Category>Security:</Category>
   <WebUI>http://[IP]:[PORT:3000]/</WebUI>
   <TemplateURL/>
@@ -32,7 +32,7 @@ Username: `crowdsec@crowdsec.net`&#xD;
 Password: `!!Cr0wdS3c_M3t4b4s3??`</Requires>
   <Config Name="Host Port 1" Target="3000" Default="" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">3000</Config>
   <Config Name="Host Path 1" Target="/metabase-data/" Default="/mnt/user/appdata/crowdsec/data/" Mode="rw" Description="Location of crowdsec.db" Type="Path" Display="always" Required="true" Mask="false"/>
-  <Config Name="Host Path 2" Target="/data/" Default="/mnt/user/appdata/crowdsec/dashboard/" Mode="rw" Description="Dashboard template location" Type="Path" Display="always" Required="true" Mask="false"/>
+  <Config Name="Host Path 2" Target="/data/" Default="/mnt/user/appdata/crowdsec/dashboard/" Mode="rw" Description="Location of metabase.db" Type="Path" Display="always" Required="true" Mask="false"/>
   <Config Name="MUID" Target="MUID" Default="99" Mode="" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">99</Config>
   <Config Name="MGID" Target="MGID" Default="98" Mode="" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">98</Config>
   <Config Name="Host Key 1" Target="depends_on" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">crowdsec</Config>
