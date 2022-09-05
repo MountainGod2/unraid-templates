@@ -9,7 +9,8 @@
   <Privileged>false</Privileged>
   <Support>https://discord.gg/wGN7ShmEE8</Support>
   <Project>https://crowdsec.net/</Project>
-  <Overview>Metabase dashboard for displaying Crowdsec statistics.</Overview>
+  <Overview>Metabase dashboard template for displaying Crowdsec statistics.&#xD;
+MySQL and PostgreSQL are currently not supported, must use SQLite (default) as storage database with your local API.</Overview>
   <Category>Security:</Category>
   <WebUI>http://[IP]:[PORT:3000]/</WebUI>
   <TemplateURL/>
