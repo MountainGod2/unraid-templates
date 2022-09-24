@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>pia-wg-autorenew</Name>
+  <Repository>coleman2247/pia-wg-autorenew</Repository>
+  <Registry>https://registry.hub.docker.com/r/coleman2247/pia-wg-autorenew</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/coleman2246/pia-wg-autorenew/issues</Support>
+  <Project>https://github.com/coleman2246/pia-wg-autorenew</Project>
+  <Overview>Automatically renews wireguard for PIA. &#xD;
+This docker will perpetually create and update a file called wg0.conf in the target directory based on the parameters specified.&#xD;
+&#xD;
+Supported region list: https://github.com/MountainGod2/pia-wg-supported-regions</Overview>
+  <Category>Network:VPN</Category>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://assets-cms.privateinternetaccess.com/photos/shares/pia-mascot.png</Icon>
+  <ExtraParams>-it</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1664036827</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="PIA Username" Target="USERNAME" Default="" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="PIA Password" Target="PASSWORD" Default="" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="true"/>
+  <Config Name="Update Interval" Target="UPDATE_INTERVAL" Default="" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="Region" Target="REGION" Default="" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="Target Directory" Target="/app" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false"/>
+</Container>
