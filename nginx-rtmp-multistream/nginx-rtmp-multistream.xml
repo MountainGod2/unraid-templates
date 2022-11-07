@@ -11,28 +11,8 @@
   <Project>https://github.com/DvdGiessen/nginx-rtmp-docker</Project>
   <Overview>Lightweight nginx + rtmp module for replicating streams.&#xD;
 &#xD;
-How to stream to the server&#xD;
-&#xD;
-Set OBS up with the following settings:&#xD;
-&#xD;
-    Go to Settings &amp;gt; Stream.&#xD;
-    Fill out the following settings:&#xD;
-        Stream Type: Custom Streaming Server.&#xD;
-        URL: `rtmp://localhost:1935/live`  (Replace localhost with the IP of where the server is running.)&#xD;
-        Stream key: `test`  (This can be anything you want.)&#xD;
-&#xD;
-How to view the stream&#xD;
-&#xD;
-Using VLC:&#xD;
-&#xD;
-    Go to Media &amp;gt; Open Network Stream.&#xD;
-    Enter the following URL: `rtmp://localhost:1935/live/test`  (Replace localhost with the IP of where the server is running.)&#xD;
-    Click Play.&#xD;
-&#xD;
-More info&#xD;
-&#xD;
+More info:&#xD;
 GitHub: https://github.com/DvdGiessen/nginx-rtmp-docker&#xD;
-&#xD;
 Unraid Blog: https://unraid.net/blog/unraid-streaming-server</Overview>
   <Category>GameServers: Tools:</Category>
   <WebUI/>
