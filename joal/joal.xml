@@ -22,11 +22,11 @@
   <DonateLink/>
   <Requires>Create appdata folder. Download the latest tar.gz release. Put config.json, clients, and torrents folder into appdata location. (current release: https://github.com/anthonyraymond/joal/releases/latest)&#xD;
 &#xD;
-ex. `mkdir /mnt/user/appdata/joal &amp;amp;&amp;amp; wget -c https://github.com/anthonyraymond/joal/releases/download/2.1.33/joal.tar.gz &amp;amp;&amp;amp; tar -xzf  joal.tar.gz -C /mnt/user/appdata/joal/`</Requires>
+ex. `mkdir /mnt/user/appdata/joal &amp;amp;&amp;amp; wget -c https://github.com/anthonyraymond/joal/releases/latest/download/joal.tar.gz &amp;amp;&amp;amp; tar -xzf  joal.tar.gz -C /mnt/user/appdata/joal/`</Requires>
   <Config Name="Host Path 1" Target="/data" Default="/mnt/user/appdata/joal/" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/joal/</Config>
   <Config Name="Host Port 1" Target="5047" Default="5047" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">5047</Config>
   <Config Name="Config path" Target="joal-conf" Default="/data" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false">/data</Config>
-  <Config Name="Web UI" Target="spring.main.web-environment" Default="true" Mode="" Description="Set to true to enable optional web context. (http://host:port/SECRET_OBFUSCATION_PATH/ui/)" Type="Variable" Display="always" Required="false" Mask="false">true</Config>
+  <Config Name="Web UI" Target="spring.main.web-environment" Default="true" Mode="" Description="Set to true to enable optional web content. (http://host:port/SECRET_OBFUSCATION_PATH/ui/)" Type="Variable" Display="always" Required="false" Mask="false">true</Config>
   <Config Name="server.port" Target="server.port" Default="5047" Mode="" Description="The port to be used for both HTTP and WebSocket connection." Type="Variable" Display="always" Required="false" Mask="false">5047</Config>
   <Config Name="SECRET_OBFUSCATION_PATH" Target="joal.ui.path.prefix" Default="" Mode="" Description="Use your own complicated path here (no slash, backslash, or any other non-alphanum char)." Type="Variable" Display="always" Required="false" Mask="false"/>
   <Config Name="SECRET_TOKEN" Target="joal.ui.secret-token" Default="" Mode="" Description="Use your own secret token here (this is some kind of a password, choose a complicated one)." Type="Variable" Display="always" Required="false" Mask="true"/>
