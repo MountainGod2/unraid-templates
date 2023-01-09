@@ -17,11 +17,11 @@
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1673281804</DateInstalled>
+  <DateInstalled>1673282153</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Requires>Create checkrr.yaml and checkrr.db&#xD;
-`mkdir /mnt/user/appdata/checkrr/config &amp;amp;&amp;amp; touch /mnt/user/appdata/checkrr/config/checkrr.yaml &amp;amp;&amp;amp; touch /mnt/user/appdata/checkrr/config/checkrr.db`&#xD;
+`mkdir /mnt/user/appdata/checkrr &amp;amp;&amp;amp; mkdir /mnt/user/appdata/checkrr/config &amp;amp;&amp;amp; touch /mnt/user/appdata/checkrr/config/checkrr.yaml &amp;amp;&amp;amp; touch /mnt/user/appdata/checkrr/config/checkrr.db`&#xD;
 &#xD;
 Edit checkrr.yaml (see github repo for example file)&#xD;
 https://github.com/aetaric/checkrr/blob/main/checkrr.yaml.example&#xD;
