@@ -9,7 +9,7 @@
   <Privileged>false</Privileged>
   <Support>https://github.com/aetaric/checkrr/issues</Support>
   <Project>https://github.com/aetaric/checkrr</Project>
-  <Overview>Scan your library files for corrupt media and replace the files via sonarr and radarr</Overview>
+  <Overview>Scan your library files for corrupt media and replace the files via sonarr and radarr.</Overview>
   <Category>Downloaders: Tools:</Category>
   <WebUI>http://[IP]:[PORT:8585]</WebUI>
   <TemplateURL/>
@@ -17,17 +17,27 @@
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1673282153</DateInstalled>
+  <DateInstalled>1673311439</DateInstalled>
   <DonateText/>
   <DonateLink/>
-  <Requires>Create checkrr.yaml and checkrr.db&#xD;
-`mkdir /mnt/user/appdata/checkrr &amp;amp;&amp;amp; mkdir /mnt/user/appdata/checkrr/config &amp;amp;&amp;amp; touch /mnt/user/appdata/checkrr/config/checkrr.yaml &amp;amp;&amp;amp; touch /mnt/user/appdata/checkrr/config/checkrr.db`&#xD;
+  <Requires>1) Create checkrr.yaml and checkrr.db prior to starting container:&#xD;
 &#xD;
-Edit checkrr.yaml (see github repo for example file)&#xD;
+`mkdir /mnt/user/appdata/checkrr &amp;amp;&amp;amp; \&#xD;
+mkdir /mnt/user/appdata/checkrr/config &amp;amp;&amp;amp; \&#xD;
+touch /mnt/user/appdata/checkrr/config/checkrr.yaml &amp;amp;&amp;amp; \&#xD;
+touch /mnt/user/appdata/checkrr/config/checkrr.db`&#xD;
+&#xD;
+2) Edit checkrr.yaml (see github repo below for example config file):&#xD;
 https://github.com/aetaric/checkrr/blob/main/checkrr.yaml.example&#xD;
-`nano /mnt/user/appdata/checkrr/config/checkrr.yaml`</Requires>
-  <Config Name="Config Location" Target="/etc/checkrr.yaml" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/checkrr/config/checkrr.yaml</Config>
-  <Config Name="DB Location" Target="/checkrr.db" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/checkrr/config/checkrr.db</Config>
-  <Config Name="Media Location" Target="/media" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/data/media/</Config>
-  <Config Name="Host Port 1" Target="8585" Default="8585" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">8585</Config>
+&#xD;
+`nano /mnt/user/appdata/checkrr/config/checkrr.yaml`&#xD;
+&#xD;
+3) Optional:&#xD;
+For first time run, to check files immediately instead of waiting for schedule. Add the following to your Post Arguments:&#xD;
+&#xD;
+`command: -o`</Requires>
+  <Config Name="Config Location" Target="/etc/checkrr.yaml" Default="/mnt/user/appdata/checkrr/config/checkrr.yaml" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false"/>
+  <Config Name="DB Location" Target="/checkrr.db" Default="/mnt/user/appdata/checkrr/config/checkrr.db" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false"/>
+  <Config Name="Media Location" Target="/media" Default="/mnt/user/data/media/" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false"/>
+  <Config Name="WebUI Port" Target="8585" Default="8585" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">8585</Config>
 </Container>
