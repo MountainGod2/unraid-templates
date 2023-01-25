@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>diun</Name>
+  <Repository>crazymax/diun:latest</Repository>
+  <Registry>https://hub.docker.com/r/crazymax/diun/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/crazy-max/diun/issues</Support>
+  <Project>https://crazymax.dev/diun/</Project>
+  <Overview>Docker Image Update Notifier is a CLI application written in Go and delivered as a single executable (and a Docker image) to receive notifications when a Docker image is updated on a Docker registry.</Overview>
+  <Category>Tools:</Category>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://crazymax.dev/diun/assets/logo.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1674616436</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="TZ" Target="TZ" Default="Europe/Paris" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="Host Path 1" Target="/data" Default="/mnt/user/appdata/diun/data" Mode="rw" Description="Contains bbolt database which retains Docker images manifests" Type="Path" Display="always" Required="false" Mask="false"/>
+  <Config Name="Host Path 2" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/var/run/docker.sock</Config>
+  <Config Name="DIUN_WATCH_WORKERS" Target="DIUN_WATCH_WORKERS" Default="20" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">20</Config>
+  <Config Name="DIUN_WATCH_SCHEDULE" Target="DIUN_WATCH_SCHEDULE" Default="0 */6 * * *" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">0 */6 * * *</Config>
+  <Config Name="DIUN_WATCH_JITTER" Target="DIUN_WATCH_JITTER" Default="30s" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">30s</Config>
+  <Config Name="DIUN_PROVIDERS_DOCKER" Target="DIUN_PROVIDERS_DOCKER" Default="true" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">true</Config>
+  <Config Name="Host Label 1" Target="diun.enable" Default="true" Mode="" Description="" Type="Label" Display="advanced" Required="false" Mask="false">true</Config>
+  <Config Name="LOG_LEVEL" Target="LOG_LEVEL" Default="info" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">info</Config>
+  <Config Name="LOG_JSON" Target="LOG_JSON" Default="false" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">false</Config>
+</Container>
