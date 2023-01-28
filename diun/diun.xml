@@ -17,16 +17,16 @@
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1674698710</DateInstalled>
+  <DateInstalled>1674928358</DateInstalled>
   <DonateText>If you like our work please consider Donating.</DonateText>
   <DonateLink>https://paypal.me/ibracorp</DonateLink>
   <Requires/>
   <Config Name="TZ" Target="TZ" Default="Europe/Paris" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false"/>
   <Config Name="DIUN_DB_PATH" Target="/data" Default="/mnt/user/appdata/diun/data" Mode="rw" Description="Contains bbolt database which retains Docker images manifests" Type="Path" Display="always" Required="false" Mask="false"/>
-  <Config Name="CONFIG" Target="CONFIG" Default="/data/duin.yaml" Mode="" Description="Optional: Config location" Type="Variable" Display="always" Required="false" Mask="false"/>
   <Config Name="DIUN_PROVIDERS_DOCKER_WATCHBYDEFAULT" Target="DIUN_PROVIDERS_DOCKER_WATCHBYDEFAULT" Default="false" Mode="" Description="Optional: Set to true to watch all containers" Type="Variable" Display="always" Required="false" Mask="false"/>
   <Config Name="DIUN_PROVIDERS_DOCKER_WATCHSTOPPED" Target="DIUN_PROVIDERS_DOCKER_WATCHSTOPPED" Default="false" Mode="" Description="Optional: Set to true to watch stopped containers" Type="Variable" Display="always" Required="false" Mask="false"/>
   <Config Name="DIUN_PROVIDERS_DOCKER_ENDPOINT" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="rw" Description="Optional: Enable local docker.sock" Type="Path" Display="always" Required="false" Mask="false"/>
+  <Config Name="CONFIG" Target="/diun.yml" Default="/mnt/user/appdata/diun/data/diun.yml" Mode="rw" Description="Optional: Manually specify config location" Type="Path" Display="always" Required="false" Mask="false"/>
   <Config Name="DIUN_WATCH_WORKERS" Target="DIUN_WATCH_WORKERS" Default="20" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">20</Config>
   <Config Name="DIUN_WATCH_SCHEDULE" Target="DIUN_WATCH_SCHEDULE" Default="0 */6 * * *" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">0 */6 * * *</Config>
   <Config Name="DIUN_WATCH_JITTER" Target="DIUN_WATCH_JITTER" Default="30s" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">30s</Config>
