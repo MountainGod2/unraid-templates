@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>it-tools</Name>
+  <Repository>corentinth/it-tools</Repository>
+  <Registry>https://hub.docker.com/r/corentinth/it-tools/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/CorentinTh/it-tools/issues</Support>
+  <Project>https://it-tools.tech/</Project>
+  <Overview>Collection of handy online tools for developers, with great UX as a web app.&#xD;
+&#xD;
+https://it-tools.tech/</Overview>
+  <Category>Productivity: Tools:</Category>
+  <WebUI>http://[IP]:[PORT:80]</WebUI>
+  <TemplateURL/>
+  <Icon>https://it-tools.tech/android-chrome-512x512.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1680043878</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="WebUI Port" Target="80" Default="80" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">80</Config>
+</Container>
