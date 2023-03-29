@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>chatpad</Name>
+  <Repository>ghcr.io/deiucanta/chatpad:latest</Repository>
+  <Registry/>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/deiucanta/chatpad/issues</Support>
+  <Project>https://github.com/deiucanta/chatpad</Project>
+  <Overview>Premium quality UI for ChatGPT</Overview>
+  <Category>Cloud: Tools: Other:</Category>
+  <WebUI>http://[IP]:[PORT:80]</WebUI>
+  <TemplateURL/>
+  <Icon/>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1680098836</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="WebUI Port" Target="80" Default="1234" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">1234</Config>
+</Container>
