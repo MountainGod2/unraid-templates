@@ -3,7 +3,7 @@
   <Name>van_dam</Name>
   <Repository>ghcr.io/floppy/van_dam:latest</Repository>
   <Registry/>
-  <Network>halnet</Network>
+  <Network/>
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
