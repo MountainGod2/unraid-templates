@@ -15,7 +15,7 @@ https://github.com/Floppy/van_dam</Overview>
   <Category>Tools: Other: Status:Beta</Category>
   <WebUI>http://[IP]:[PORT:3214]</WebUI>
   <TemplateURL/>
-  <Icon>https://raw.githubusercontent.com/MountainGod2/unraid-templates/main/van_dam/van_dam.png</Icon>
+  <Icon>https://raw.githubusercontent.com/MountainGod2/unraid-templates/main/van_dam/logo.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
