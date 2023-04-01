@@ -13,7 +13,7 @@
   <Category>Cloud: Tools: Other:</Category>
   <WebUI>http://[IP]:[PORT:80]</WebUI>
   <TemplateURL/>
-  <Icon/>
+  <Icon>https://raw.githubusercontent.com/deiucanta/chatpad/main/src/assets/favicon.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
