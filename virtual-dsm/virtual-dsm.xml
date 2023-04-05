@@ -10,7 +10,7 @@
   <Support>https://github.com/kroese/virtual-dsm/issues</Support>
   <Project>https://github.com/kroese/virtual-dsm</Project>
   <Overview>A docker container of Virtual DSM v7.2</Overview>
-  <Category>Backup: Tools:</Category>
+  <Category>Backup: Cloud: Tools:</Category>
   <WebUI>http://[IP]:[PORT:5000]</WebUI>
   <TemplateURL/>
   <Icon>https://raw.githubusercontent.com/MountainGod2/unraid-templates/virtual-dsm/virtual-dsm/logo.png</Icon>
