@@ -14,7 +14,7 @@
   <WebUI>http://[IP]:[PORT:5000]</WebUI>
   <TemplateURL/>
   <Icon>https://raw.githubusercontent.com/MountainGod2/unraid-templates/main/virtual-dsm/logo.png</Icon>
-  <ExtraParams>--cap-add NET_ADMIN</ExtraParams>
+  <ExtraParams>--stop-timeout 60 --cap-add NET_ADMIN</ExtraParams>
   <PostArgs/>
   <CPUset/>
   <DateInstalled>1680651664</DateInstalled>
@@ -25,6 +25,7 @@
   <Config Name="HTTPS Port" Target="5001" Default="5001" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false"/>
   <Config Name="VM Disk Size" Target="DISK_SIZE" Default="16G" Mode="" Description="Optional: Default is 16GB, ex. `16G`" Type="Variable" Display="always" Required="false" Mask="false"/>
   <Config Name="RAM Size" Target="RAM_SIZE" Default="512M" Mode="" Description="Optional: Default is 512MB, ex. `512M`" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="CPU Cores" Target="CPU_CORES" Default="1" Mode="" Description="Optional: Default is 1" Type="Variable" Display="always" Required="false" Mask="false"/>
   <Config Name="Disk Location" Target="/storage" Default="" Mode="rw" Description="Optional: By default resides in docker volume. Set path to storage directory to override" Type="Path" Display="always" Required="false" Mask="false"/>
   <Config Name="KVM" Target="" Default="" Mode="" Description="" Type="Device" Display="advanced" Required="false" Mask="false">/dev/kvm</Config>
 </Container>
