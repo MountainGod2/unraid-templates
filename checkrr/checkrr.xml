@@ -13,7 +13,7 @@
   <Category>Downloaders: Tools:Utilities</Category>
   <WebUI>http://[IP]:[PORT:8585]</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/MountainGod2/unraid-templates/master/checkrr/checkrr.xml</TemplateURL>
-  <Icon>https://raw.githubusercontent.com/MountainGod2/unraid-templates/main/checkrr/magnify-scan.svg</Icon>
+  <Icon>https://raw.githubusercontent.com/MountainGod2/unraid-templates/main/checkrr/magnify-scan.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
