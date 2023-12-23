@@ -14,7 +14,7 @@
   <WebUI>http://[IP]:[PORT:5000]</WebUI>
   <TemplateURL/>
   <Icon>https://raw.githubusercontent.com/MountainGod2/unraid-templates/main/virtual-dsm/logo.png</Icon>
-  <ExtraParams>--stop-timeout 120 --cap-add NET_ADMIN --cap-add LINUX_IMMUTABLE --device-cgroup-rule='c *:* rwm'</ExtraParams>
+  <ExtraParams>--stop-timeout 120 --cap-add NET_ADMIN --device-cgroup-rule='c *:* rwm'</ExtraParams>
   <PostArgs/>
   <CPUset/>
   <DateInstalled>1680651664</DateInstalled>
