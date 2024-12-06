@@ -31,5 +31,6 @@
   <Config Name="Preallocation" Target="ALLOCATE" Default="Y" Mode="" Description="Optional: Wether to preallocate the full disk capacity in advance." Type="Variable" Display="always" Required="false" Mask="false"/>
   <Config Name="Disk format" Target="DISK_FMT" Default="raw" Mode="" Description="Optional: Default is `raw`. Can be set to `qcow2` to create a growable disk." Type="Variable" Display="always" Required="false" Mask="false"/>
   <Config Name="KVM" Target="" Default="" Mode="" Description="" Type="Device" Display="advanced" Required="false" Mask="false">/dev/kvm</Config>
+  <Config Name="TUN" Target="" Default="" Mode="" Description="" Type="Device" Display="advanced" Required="false" Mask="false">/dev/net/tun</Config>
   <Config Name="VHost" Target="" Default="" Mode="" Description="" Type="Device" Display="advanced" Required="false" Mask="false">/dev/vhost-net</Config>
 </Container>
