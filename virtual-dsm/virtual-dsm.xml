@@ -17,7 +17,6 @@
   <ExtraParams>--stop-timeout 120 --cap-add NET_ADMIN --device-cgroup-rule='c *:* rwm'</ExtraParams>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1680651664</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Requires/>
