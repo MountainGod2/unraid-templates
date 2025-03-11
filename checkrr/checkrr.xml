@@ -9,32 +9,39 @@
   <Privileged>false</Privileged>
   <Support>https://github.com/aetaric/checkrr/issues</Support>
   <Project>https://github.com/aetaric/checkrr</Project>
-  <Overview>Scan your library files for corrupt media and replace the files via sonarr and radarr</Overview>
-  <Category>Downloaders: Tools:Utilities</Category>
+  <Overview>Scan your library files for corrupt media and replace the files via sonarr and radarr.&#xD;
+&#xD;
+Join the Checkrr discord here:&#xD;
+`https://discord.gg/dkTfNKbEhJ`</Overview>
+  <Category>Downloaders: Tools:</Category>
   <WebUI>http://[IP]:[PORT:8585]</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/MountainGod2/unraid-templates/master/checkrr/checkrr.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/MountainGod2/unraid-templates/main/checkrr/magnify-scan.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1673319881</DateInstalled>
+  <DateInstalled>1741737035</DateInstalled>
   <DonateText>If you like our work please consider Donating.</DonateText>
   <DonateLink>https://paypal.me/ibracorp</DonateLink>
-  <Requires>1) Create checkrr.yaml and checkrr.db:&#xD;
+  <Requires>1) Create checkrr directory&#xD;
 &#xD;
-`mkdir /mnt/user/appdata/checkrr &amp;amp;&amp;amp; mkdir /mnt/user/appdata/checkrr/config &amp;amp;&amp;amp; touch /mnt/user/appdata/checkrr/config/checkrr.yaml &amp;amp;&amp;amp; touch /mnt/user/appdata/checkrr/config/checkrr.db`&#xD;
+`mkdir -p /mnt/user/appdata/checkrr/config`&#xD;
 &#xD;
-2) Edit checkrr.yaml (see example file from github repo below)&#xD;
-https://github.com/aetaric/checkrr/blob/main/checkrr.yaml.example&#xD;
+2) Create and edit checkrr.yaml using the sample from the repository: (remove any unused items)&#xD;
+&#xD;
+`wget https://raw.githubusercontent.com/aetaric/checkrr/refs/heads/main/checkrr.yaml.example -O /mnt/user/appdata/checkrr/config/checkrr.yaml`&#xD;
 &#xD;
 `nano /mnt/user/appdata/checkrr/config/checkrr.yaml`&#xD;
 &#xD;
+** NOTE: If using this template's default mapping, the database path should be: `/etc/checkrr/checkrr.db` **&#xD;
+&#xD;
 3) Optional:&#xD;
-For first time run, to check files once and exit instead of waiting for scheduled time. Add the following to your Post Arguments:&#xD;
+&#xD;
+For first-time run, to check files once and exit instead of waiting for the scheduled time. Add the following to your Post Arguments:&#xD;
 &#xD;
 `command: -o`</Requires>
-  <Config Name="Config Location" Target="/etc/checkrr.yaml" Default="/mnt/user/appdata/checkrr/config/checkrr.yaml" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false"/>
-  <Config Name="DB Location" Target="/checkrr.db" Default="/mnt/user/appdata/checkrr/config/checkrr.db" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false"/>
-  <Config Name="Media Location" Target="/media" Default="/mnt/user/data/media/" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false"/>
+  <Config Name="Config Directory" Target="/etc/checkrr/" Default="/mnt/user/appdata/checkrr/config/" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/checkrr/config/</Config>
+  <Config Name="Media Location" Target="/media/" Default="/mnt/user/data/media/" Mode="ro" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/data/media/</Config>
   <Config Name="WebUI Port" Target="8585" Default="8585" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">8585</Config>
+  <TailscaleStateDir/>
 </Container>
