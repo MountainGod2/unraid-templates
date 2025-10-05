@@ -1,0 +1,210 @@
+lang: "en-us"
+checkrr:
+  checkpath: 
+    - "/media/movies/"
+    # - "/media/movies4k"
+    - "/media/tv/"
+    # - "/anime/"
+    # - "/music/"
+  database: "/etc/checkrr/checkrr.db"
+  debug: false
+  # csvfile: "/etc/checkrr/badfiles.csv"
+  cron: "@daily"
+  ignorehidden: true
+  # requireaudio: true
+  ignorepaths:
+    - 'media/tv/ignored'
+  # removevideo:
+    # - "avi"
+    # - "avc"
+    # - "h265"
+  # removelang:
+    # - unknown
+  # removeaudio:
+    # - "DTS - 5.1"
+  ignoreexts:
+    - .txt
+    - .nfo
+    - .nzb
+    - .url
+logs:
+  stdout:
+    out: stdout
+    formatter: default
+  file:
+    out: file
+    path: "/etc/checkrr/checkrr.log"
+    formatter: default
+  # jsonfile:
+    # out: file
+    # path: "/etc/checkrr/checkrr.json"
+    # formatter: json
+  # syslog:
+    # out: syslog
+    # formatter: default
+    # protocol: udp
+    # addr: "localhost:514"
+arr:
+  radarr:
+    process: false
+    service: radarr # should be one of: sonarr radarr lidarr
+    address: ""
+    apikey: ""
+    baseurl: /
+    port: 7878
+    ssl: false
+    mappings: # maps directories between docker and arr services
+      "/data/media/movies/": "/media/movies/" # what radarr sees: what checkrr sees
+  # radarr-4k:
+    # process: false
+    # service: radarr
+    # address: ""
+    # apikey: ""
+    # baseurl: /
+    # port: 7979
+    # ssl: false
+    # mappings:
+      # "/data/media/movies4k/": "/media/movies4k/"
+  sonarr:
+    process: false
+    service: sonarr
+    address: ""
+    apikey: ""
+    baseurl: /
+    port: 8989
+    ssl: false
+    mappings:
+      "/data/media/tv/": "/media/tv/"
+  # anime:
+    # process: false
+    # service: sonarr
+    # address: 127.0.0.1
+    # apikey: ""
+    # baseurl: /
+    # port: 8888
+    # ssl: false
+    # mappings:
+      # "/data/media/anime/": "/media/anime/"
+  # lidarr:
+    # process: false
+    # service: lidarr
+    # address: 127.0.0.1
+    # apikey: ""
+    # baseurl: /
+    # port: 8686
+    # ssl: false
+    # mappings:
+      # "/data/media/music/": "/media/music/"
+# notifications:
+  # discord:
+    # url: ""
+    # notificationtypes: 
+      # - reacquire
+      # - unknowndetected
+      # - startrun
+      # - endrun
+  # healthchecks:
+    # url: ""
+    # notificationtypes: # start and end are required
+      # - startrun
+      # - endrun
+      # - reacquire
+  # telegram:
+    # apitoken: ""
+    # username: "@username" # This must start with an @ to send to a user, otherwise, list the channel name
+    # chatid: 0 # Start checkrr, DM the bot, and then trigger a run. Checkrr will log the chatid to the console. Place the chatid value here.
+    # notificationtypes:
+      # - reacquire
+      # - unknowndetected
+      # - startrun
+      # - endrun
+  # webhook:
+    # url: ""
+    # notificationtypes:
+      # - reacquire
+      # - unknowndetected
+      # - startrun
+      # - endrun
+  # pushbullet:
+    # apitoken: ""
+    # devices: 
+      # - myDevice1
+      # - iPhone14
+    # notificationtypes:
+      # - reacquire
+      # - unknowndetected
+      # - startrun
+      # - endrun
+  # pushover:
+    # apitoken: ""
+    # recipient: ""
+    # notificationtypes:
+      # - reacquire
+      # - unknowndetected
+      # - startrun
+      # - endrun
+  # gotify:
+    # url: ""
+    # authtoken: ""
+    # notificationtypes:
+      # - reacquire
+      # - unknowndetected
+      # - startrun
+      # - endrun
+  # splunk:
+    # url: ""
+    # token: ""
+    # notificationtypes:
+      # - reacquire
+      # - unknowndetected
+      # - startrun
+      # - endrun
+  # ntfy:
+    # host: ""
+    # topic: ""
+    # token: "" # either use a token or a user and pass, not both.
+    # user: ""
+    # pass: ""
+    # notificationtypes:
+      # - reacquire
+      # - unknowndetected
+      # - startrun
+      # - endrun
+  # smtp:
+    # host: ""
+    # port: 25
+    # auth:
+      # pass: ""
+      # enabled: false
+    # starttls: false
+    # ssl: false
+    # from: ""
+    # to: ""
+    # notificationtypes:
+      # - reacquire
+      # - unknowndetected
+      # - startrun
+      # - endrun
+# stats: # These will slow down the runtime substantially, but... DATA
+  # influxdb1:
+    # url: ""
+    # user: "" # leave this and pass blank if your server requires no authentication
+    # pass: ""
+    # bucket: "checkrr" # this database must exist already. Use influx command to create the database.
+  # influxdb2:
+    # url: ""
+    # token: ""
+    # org: "default"
+    # bucket: "checkrr"
+  # splunk:
+    # address: "https://127.0.0.1:8088/services/collector" # You must have HTTP Event Collection enabled and configured
+    # token: "HEC Token" # this is the HEC token for your input. Configure it to force ingestion into a metrics index
+webserver:
+  port: 8585
+  tls: false
+  certs:
+    cert: "/etc/checkrr/cert.pem"
+    key: "/etc/checkrr/cert.pem"
+  baseurl: "/"
+  trustedproxies:
+    - 127.0.0.1
