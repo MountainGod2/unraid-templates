@@ -204,7 +204,7 @@ webserver:
   tls: false
   certs:
     cert: "/etc/checkrr/cert.pem"
-    key: "/etc/checkrr/cert.pem"
+    key: "/etc/checkrr/privkey.pem"
   baseurl: "/"
   trustedproxies:
     - 127.0.0.1
