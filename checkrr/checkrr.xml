@@ -17,7 +17,7 @@
   </Overview>
   <Category>Downloaders: Tools: MediaApp:Video MediaApp:Music</Category>
   <WebUI>http://[IP]:[PORT:8585]</WebUI>
-  <TemplateURL>https://raw.githubusercontent.com/MountainGod2/unraid-templates/main/checkrr/checkrr.xml</TemplateURL>
+  <TemplateURL>https://raw.githubusercontent.com/MountainGod2/unraid-templates/master/checkrr/checkrr.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/MountainGod2/unraid-templates/main/checkrr/magnify-scan.png</Icon>
   <ExtraParams/>
   <PostArgs/>
