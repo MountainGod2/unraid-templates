@@ -9,39 +9,71 @@
   <Privileged>false</Privileged>
   <Support>https://github.com/aetaric/checkrr/issues</Support>
   <Project>https://github.com/aetaric/checkrr</Project>
-  <Overview>Scan your library files for corrupt media and replace the files via sonarr and radarr.&#xD;
-&#xD;
-Join the Checkrr discord here:&#xD;
-`https://discord.gg/dkTfNKbEhJ`</Overview>
-  <Category>Downloaders: Tools:</Category>
+  <Overview>
+    Scan your library files for corrupt media and replace the files via sonarr and radarr.&#xD;
+    &#xD;
+    Join the Checkrr discord here:&#xD;
+    `https://discord.gg/dkTfNKbEhJ`
+  </Overview>
+  <Category>Downloaders: Tools: MediaApp:Video MediaApp:Music</Category>
   <WebUI>http://[IP]:[PORT:8585]</WebUI>
-  <TemplateURL>https://raw.githubusercontent.com/MountainGod2/unraid-templates/master/checkrr/checkrr.xml</TemplateURL>
+  <TemplateURL>https://raw.githubusercontent.com/MountainGod2/unraid-templates/main/checkrr/checkrr.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/MountainGod2/unraid-templates/main/checkrr/magnify-scan.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1741737035</DateInstalled>
+  <DateInstalled>1759691892</DateInstalled>
   <DonateText>If you like our work please consider Donating.</DonateText>
   <DonateLink>https://paypal.me/ibracorp</DonateLink>
-  <Requires>1) Create checkrr directory&#xD;
-&#xD;
-`mkdir -p /mnt/user/appdata/checkrr/config`&#xD;
-&#xD;
-2) Create and edit checkrr.yaml using the sample from the repository: (remove any unused items)&#xD;
-&#xD;
-`wget https://raw.githubusercontent.com/aetaric/checkrr/refs/heads/main/checkrr.yaml.example -O /mnt/user/appdata/checkrr/config/checkrr.yaml`&#xD;
-&#xD;
-`nano /mnt/user/appdata/checkrr/config/checkrr.yaml`&#xD;
-&#xD;
-** NOTE: If using this template's default mapping, the database path should be: `/etc/checkrr/checkrr.db` **&#xD;
-&#xD;
-3) Optional:&#xD;
-&#xD;
-For first-time run, to check files once and exit instead of waiting for the scheduled time. Add the following to your Post Arguments:&#xD;
-&#xD;
-`command: -o`</Requires>
-  <Config Name="Config Directory" Target="/etc/checkrr/" Default="/mnt/user/appdata/checkrr/config/" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/checkrr/config/</Config>
-  <Config Name="Media Location" Target="/media/" Default="/mnt/user/data/media/" Mode="ro" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/data/media/</Config>
-  <Config Name="WebUI Port" Target="8585" Default="8585" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">8585</Config>
+  <Requires>
+    1) Create checkrr directory&#xD;
+    &#xD;
+    `mkdir -p /mnt/user/appdata/checkrr/config`&#xD;
+    &#xD;
+    2) Download and edit sample config file: (remove any unused items and adjust as needed)&#xD;
+    &#xD;
+    `wget https://raw.githubusercontent.com/MountainGod2/unraid-templates/refs/heads/main/checkrr/checkerr.yaml.example -O /mnt/user/appdata/checkrr/config/checkrr.yaml`&#xD;
+    &#xD;
+    `nano /mnt/user/appdata/checkrr/config/checkrr.yaml`&#xD;
+    &#xD;
+    3) Optional:&#xD;
+    &#xD;
+    To check files once and exit instead of waiting for the scheduled time; enable Advanced View, and add the following to your Post Arguments:&#xD;
+    &#xD;
+    `command: -o`
+  </Requires>
+  <Config
+    Name="Config Directory"
+    Target="/etc/checkrr/"
+    Default="/mnt/user/appdata/checkrr/config/"
+    Mode="rw"
+    Description=""
+    Type="Path"
+    Display="always"
+    Required="true"
+    Mask="false"
+  >/mnt/user/appdata/checkrr/config/</Config>
+  <Config
+    Name="Media Location"
+    Target="/media/"
+    Default="/mnt/user/data/media/"
+    Mode="ro"
+    Description=""
+    Type="Path"
+    Display="always"
+    Required="true"
+    Mask="false"
+  >/mnt/user/data/media/</Config>
+  <Config
+    Name="WebUI Port"
+    Target="8585"
+    Default="8585"
+    Mode="tcp"
+    Description=""
+    Type="Port"
+    Display="always"
+    Required="false"
+    Mask="false"
+  >8585</Config>
   <TailscaleStateDir/>
 </Container>
