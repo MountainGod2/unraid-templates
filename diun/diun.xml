@@ -5,32 +5,46 @@
   <Registry>https://hub.docker.com/r/crazymax/diun/</Registry>
   <Network>bridge</Network>
   <MyIP/>
+  <MyMAC/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
   <Support>https://github.com/crazy-max/diun/issues</Support>
   <Project>https://crazymax.dev/diun/</Project>
-  <Overview>Docker Image Update Notifier is a CLI application written in Go and delivered as a single executable (and a Docker image) to receive notifications when a Docker image is updated on a Docker registry.</Overview>
+  <ReadMe>https://crazymax.dev/diun/</ReadMe>
+  <Overview>Docker Image Update Notifier is a CLI application written in Go and delivered as a Docker image to receive notifications when a Docker image is updated on a Docker registry.</Overview>
   <Category>Tools:Utilities</Category>
   <WebUI/>
-  <TemplateURL>https://raw.githubusercontent.com/MountainGod2/unraid-templates/master/diun/diun.xml</TemplateURL>
+  <TemplateURL>https://raw.githubusercontent.com/MountainGod2/unraid-templates/main/diun/diun.xml</TemplateURL>
   <Icon>https://crazymax.dev/diun/assets/logo.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1674928358</DateInstalled>
-  <DonateText>If you like our work please consider Donating.</DonateText>
+  <DateInstalled>1778884168</DateInstalled>
+  <DonateText>Contribute upstream first. But if you like our work, consider donating.</DonateText>
   <DonateLink>https://paypal.me/ibracorp</DonateLink>
-  <Requires/>
-  <Config Name="TZ" Target="TZ" Default="Europe/Paris" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false"/>
-  <Config Name="DIUN_DB_PATH" Target="/data" Default="/mnt/user/appdata/diun/data" Mode="rw" Description="Contains bbolt database which retains Docker images manifests" Type="Path" Display="always" Required="false" Mask="false"/>
-  <Config Name="DIUN_PROVIDERS_DOCKER_WATCHBYDEFAULT" Target="DIUN_PROVIDERS_DOCKER_WATCHBYDEFAULT" Default="false" Mode="" Description="Optional: Set to true to watch all containers" Type="Variable" Display="always" Required="false" Mask="false"/>
-  <Config Name="DIUN_PROVIDERS_DOCKER_WATCHSTOPPED" Target="DIUN_PROVIDERS_DOCKER_WATCHSTOPPED" Default="false" Mode="" Description="Optional: Set to true to watch stopped containers" Type="Variable" Display="always" Required="false" Mask="false"/>
-  <Config Name="DIUN_PROVIDERS_DOCKER_ENDPOINT" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="rw" Description="Optional: Enable local docker.sock" Type="Path" Display="always" Required="false" Mask="false"/>
-  <Config Name="CONFIG" Target="/diun.yml" Default="/mnt/user/appdata/diun/data/diun.yml" Mode="rw" Description="Optional: Manually specify config location" Type="Path" Display="always" Required="false" Mask="false"/>
+  <Requires>Add notification variables as needed. Ex.&#13;
+&#13;
+DIUN_NOTIF_DISCORD_WEBHOOKURL&#13;
+DIUN_NOTIF_DISCORD_WEBHOOKURLFILE&#13;
+DIUN_NOTIF_DISCORD_MENTIONS (comma separated)&#13;
+DIUN_NOTIF_DISCORD_RENDEREMBEDS&#13;
+DIUN_NOTIF_DISCORD_RENDERFIELDS&#13;
+DIUN_NOTIF_DISCORD_TIMEOUT&#13;
+DIUN_NOTIF_DISCORD_TEMPLATEBODY&#13;
+&#13;
+&#13;
+If you are using a Docker socket proxy, delete the `/var/run/docker.sock` volume mapping, and add an environment variable for `DIUN_PROVIDERS_DOCKER_ENDPOINT` = `tcp://dockersocket:2375`</Requires>
+  <Config Name="TZ" Target="TZ" Default="Europe/Paris" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">America/Edmonton</Config>
+  <Config Name="DIUN_DB_PATH" Target="/data" Default="/mnt/user/appdata/diun/data" Mode="rw" Description="Contains bbolt database which retains Docker images manifests" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/diun/data</Config>
+  <Config Name="DIUN_PROVIDERS_DOCKER_WATCHBYDEFAULT" Target="DIUN_PROVIDERS_DOCKER_WATCHBYDEFAULT" Default="false" Mode="" Description="Optional: Set to true to watch all containers" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
+  <Config Name="DIUN_PROVIDERS_DOCKER_WATCHSTOPPED" Target="DIUN_PROVIDERS_DOCKER_WATCHSTOPPED" Default="false" Mode="" Description="Optional: Set to true to watch stopped containers" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
+  <Config Name="DIUN_PROVIDERS_DOCKER_ENDPOINT" Target="DIUN_PROVIDERS_DOCKER_ENDPOINT" Default="" Mode="" Description="Note: Set to `tcp://dockersocket:2375` if you are using a proxy" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="DUIN_DOCKER_SOCKET" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="rw" Description="Note: Remove if you are using a proxy" Type="Path" Display="always" Required="false" Mask="false">/var/run/docker.sock</Config>
   <Config Name="DIUN_WATCH_WORKERS" Target="DIUN_WATCH_WORKERS" Default="20" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">20</Config>
   <Config Name="DIUN_WATCH_SCHEDULE" Target="DIUN_WATCH_SCHEDULE" Default="0 */6 * * *" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">0 */6 * * *</Config>
   <Config Name="DIUN_WATCH_JITTER" Target="DIUN_WATCH_JITTER" Default="30s" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">30s</Config>
   <Config Name="DIUN_PROVIDERS_DOCKER" Target="DIUN_PROVIDERS_DOCKER" Default="true" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">true</Config>
   <Config Name="LOG_LEVEL" Target="LOG_LEVEL" Default="info" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">info</Config>
   <Config Name="LOG_JSON" Target="LOG_JSON" Default="false" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">false</Config>
+  <TailscaleStateDir/>
 </Container>
