@@ -9,7 +9,7 @@
   <Privileged>false</Privileged>
   <Support>https://github.com/vdsm/virtual-dsm/issues</Support>
   <Project>https://github.com/vdsm/virtual-dsm</Project>
-  <Overview>A docker container of Virtual DSM v7.2</Overview>
+  <Overview>Virtual DSM in a Docker container.</Overview>
   <Category>Backup: Cloud: Tools:</Category>
   <WebUI>http://[IP]:[PORT:5000]</WebUI>
   <TemplateURL/>
@@ -20,16 +20,22 @@
   <DonateText/>
   <DonateLink/>
   <Requires/>
-  <Config Name="HTTP Port" Target="5000" Default="5000" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false"/>
-  <Config Name="HTTPS Port" Target="5001" Default="5001" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false"/>
-  <Config Name="VM Disk Size" Target="DISK_SIZE" Default="16G" Mode="" Description="Optional: Default is 16GB, ex. `16G`" Type="Variable" Display="always" Required="false" Mask="false"/>
-  <Config Name="RAM Size" Target="RAM_SIZE" Default="1G" Mode="" Description="Optional: Default is 1GB, ex. `1G`" Type="Variable" Display="always" Required="false" Mask="false"/>
-  <Config Name="CPU Cores" Target="CPU_CORES" Default="1" Mode="" Description="Optional: Default is 1" Type="Variable" Display="always" Required="false" Mask="false"/>
-  <Config Name="DHCP Mode" Target="DHCP" Default="N" Mode="" Description="Optional: Set to Y to enable DHCP (required for custom br0 network)" Type="Variable" Display="always" Required="false" Mask="false"/>
-  <Config Name="Disk Location" Target="/storage" Default="" Mode="rw" Description="Optional: By default resides in docker volume. Set path to storage directory to override" Type="Path" Display="always" Required="false" Mask="false"/>
-  <Config Name="Preallocation" Target="ALLOCATE" Default="Y" Mode="" Description="Optional: Wether to preallocate the full disk capacity in advance." Type="Variable" Display="always" Required="false" Mask="false"/>
-  <Config Name="Disk format" Target="DISK_FMT" Default="raw" Mode="" Description="Optional: Default is `raw`. Can be set to `qcow2` to create a growable disk." Type="Variable" Display="always" Required="false" Mask="false"/>
-  <Config Name="KVM" Target="" Default="" Mode="" Description="" Type="Device" Display="advanced" Required="false" Mask="false">/dev/kvm</Config>
-  <Config Name="TUN" Target="" Default="" Mode="" Description="" Type="Device" Display="advanced" Required="false" Mask="false">/dev/net/tun</Config>
-  <Config Name="VHost" Target="" Default="" Mode="" Description="" Type="Device" Display="advanced" Required="false" Mask="false">/dev/vhost-net</Config>
+  <Config Name="HTTP Port" Target="5000" Default="5000" Mode="tcp" Description="Port for the DSM web interface, ex. `5000`. Change it if another container already uses 5000 on this server." Type="Port" Display="always" Required="true" Mask="false"/>
+  <Config Name="HTTPS Port" Target="5001" Default="5001" Mode="tcp" Description="Optional: Port for the DSM web interface over HTTPS, ex. `5001`. Only needed if you use HTTPS inside DSM." Type="Port" Display="always" Required="false" Mask="false"/>
+  <Config Name="VM Disk Size" Target="DISK_SIZE" Default="256G" Mode="" Description="Optional: Size of the main data disk, ex. `256G` or `1T`. Increasing it later grows the existing disk without data loss. Default is `256G`" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="RAM Size" Target="RAM_SIZE" Default="2G" Mode="" Description="Optional: Amount of RAM assigned to DSM, ex. `2G`, `4G`, `half` or `max`. Give more if you run packages like Surveillance Station or Synology Photos. Default is `2G`" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="CPU Cores" Target="CPU_CORES" Default="2" Mode="" Description="Optional: Number of virtual CPU cores, ex. `2`, `4`, `half` or `max`. More cores help with indexing and many cameras. Default is `2`" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="DHCP Mode" Target="DHCP" Default="N" Mode="" Description="Optional: Set to `Y` to let DSM get its own IP address from your router, ex. when using a custom `br0` network. Requires the VHost device. Default is `N`" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="Disk Location" Target="/storage" Default="" Mode="rw" Description="Optional: Host folder for the DSM disk images, ex. `/mnt/user/domains/dsm`. Set it so the disks live on your array or cache instead of inside the Docker image." Type="Path" Display="always" Required="false" Mask="false"/>
+  <Config Name="Preallocation" Target="ALLOCATE" Default="N" Mode="" Description="Optional: Set to `Y` to reserve the full disk size up front, ex. to make sure the space stays available on the array. With `N` the disk only uses the space DSM actually fills. Default is `N`" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="Disk format" Target="DISK_FMT" Default="raw" Mode="" Description="Optional: Disk image format, ex. `raw` (fastest) or `qcow2` (growable file). Default is `raw`" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="DSM Version URL" Target="URL" Default="" Mode="" Description="Optional: URL or local path of a `.pat` file to install a specific DSM version, ex. `https://global.synologydownload.com/download/DSM/release/7.4.1/90080/DSM_VirtualDSM_90080.pat`. Only used for a new installation, existing installs update through DSM itself." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="Host Model" Target="HOST_MODEL" Default="" Mode="" Description="Optional: Model of your Synology NAS reported to DSM, ex. `DS920+`. Set it together with the other host and guest fields to retrieve or transfer licenses linked to your Synology Account." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="Host Serial" Target="HOST_SERIAL" Default="" Mode="" Description="Optional: Serial number of your Synology NAS, ex. `XXXXXXXXXXXXX`, as shown on its label or in Control Panel - Info Center. Needed for Synology Account licensing." Type="Variable" Display="advanced" Required="false" Mask="true"/>
+  <Config Name="Host MAC" Target="HOST_MAC" Default="" Mode="" Description="Optional: MAC address of your Synology NAS, ex. `00:11:32:XX:XX:XX`, as shown in Control Panel - Info Center - Network. Needed for Synology Account licensing." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="Guest Serial" Target="GUEST_SERIAL" Default="" Mode="" Description="Optional: Serial number of a Virtual DSM created in Virtual Machine Manager on your Synology NAS (one free Virtual DSM license per host), ex. `XXXXXXXXXXXXX`. Needed to transfer purchased DSM and Surveillance Station licenses." Type="Variable" Display="advanced" Required="false" Mask="true"/>
+  <Config Name="Guest MAC" Target="MAC" Default="" Mode="" Description="Optional: MAC address of that Virtual DSM, ex. `02:11:32:XX:XX:XX`, used for the guest network adapter. Keep it fixed so DSM keeps its identity and DHCP lease." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="KVM" Target="" Default="" Mode="" Description="Hardware virtualization device, required to run DSM at near-native speed." Type="Device" Display="advanced" Required="false" Mask="false">/dev/kvm</Config>
+  <Config Name="TUN" Target="" Default="" Mode="" Description="Network tunnel device, required for the container's default NAT networking." Type="Device" Display="advanced" Required="false" Mask="false">/dev/net/tun</Config>
+  <Config Name="VHost" Target="" Default="" Mode="" Description="Kernel network acceleration device, required when DHCP Mode is `Y`." Type="Device" Display="advanced" Required="false" Mask="false">/dev/vhost-net</Config>
 </Container>
