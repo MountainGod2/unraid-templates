@@ -1,2 +1,2 @@
 # unraid-templates
-A collection of docker templates for Unraid's UI container management solution
+A collection of community Docker templates for Unraid.
